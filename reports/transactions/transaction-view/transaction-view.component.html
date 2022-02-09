@@ -1,0 +1,291 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="md-settings_wrap">
+                <div class="md-g_title">
+                    <h4>Генератор отчетов</h4>
+                    <p>Сгенерируйте отчет используя фильтры и опции</p>
+                </div>
+                <div class="md-g_content">
+                    <label class="md-rp-label">
+                        <i class="fa fa-bars"></i>
+                        <input type="text" disabled value="Отчет о транзакции" name="" id="">
+                    </label>  
+                   
+
+                    <button disabled class="btn btn-dark disabled ml-auto mr-auto d-flex">Сформировать</button>
+                </div>
+            </div>  
+            <div class="md-g_title mt-4">
+                <h4>Операции</h4>
+            </div> 
+            <div class="md-g_actions d-flex flex-wrap">
+                <!-- <button (click)="downloadFile()"class="btn btn-primary rounded-circle p-3 mr-2">
+                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.61709 14.7226L9.61709 1.67822" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.4116 11.5508L9.61712 14.7228L6.82262 11.5508" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.0569 6.80566H14.951C16.9012 6.80566 18.4815 8.59208 18.4815 10.7977V16.0887C18.4815 18.2879 16.905 20.07 14.9596 20.07L4.2838 20.07C2.33359 20.07 0.752339 18.2825 0.752339 16.0779V10.7858C0.752339 8.58775 2.32976 6.80566 4.27421 6.80566H5.17696" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                </button> -->
+                <button (click)="print()" class="btn btn-info rounded-circle p-3">
+                    <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="19" cy="11" r="1" fill="#F2F2F2"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.965 6.40841C18.7076 6.49081 19.3644 6.59743 19.9444 6.73278C19.9831 6.327 20 5.8828 20 5.39684C20 0.952542 18.588 0 12 0C5.412 0 4 0.952542 4 5.39684C4 5.8828 4.01688 6.327 4.05557 6.73278C4.63556 6.59743 5.29244 6.49081 6.03502 6.40841C6.01267 6.12419 6 5.79023 6 5.39684C6 3.24504 6.37903 2.87125 6.648 2.68981C6.88639 2.52899 7.34831 2.33394 8.26722 2.19617C9.17726 2.05973 10.3828 2 12 2C13.6172 2 14.8227 2.05973 15.7328 2.19617C16.6517 2.33394 17.1136 2.52899 17.352 2.68981C17.621 2.87125 18 3.24504 18 5.39684C18 5.79023 17.9873 6.12419 17.965 6.40841Z" fill="#F2F2F2"/>
+                        <path d="M5 20C5 22.4969 5.37712 23.5178 6.12165 24.0738C6.52707 24.3765 7.14058 24.6197 8.1155 24.7786C9.0888 24.9373 10.3423 25 11.9677 25C13.5928 25 14.8509 24.9373 15.8308 24.7785C16.8125 24.6194 17.4364 24.3755 17.8513 24.0698C18.6103 23.5108 19 22.4873 19 20C19 18.4675 18.9974 17.4313 18.8854 16.6784C18.7777 15.9546 18.5962 15.6996 18.3975 15.5512C18.1369 15.3565 17.6325 15.1819 16.5286 15.0903C15.4504 15.0008 13.9941 15 11.9677 15C9.95728 15 8.51346 15.0008 7.44474 15.0903C6.3507 15.1818 5.85357 15.356 5.59751 15.5488C5.40169 15.6963 5.22087 15.9514 5.11378 16.6772C5.00259 17.4308 5 18.4678 5 20Z" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 13.4871C2 15.1286 2.0696 16.1799 2.26223 16.9116C2.42747 17.5393 2.64748 17.8048 2.96252 18.0089C3.19569 18.16 3.53989 18.3123 4.06143 18.4485C4.01858 18.9174 4 19.4332 4 20C4 20.1678 4.00163 20.3311 4.00503 20.49C0.444864 19.7281 0 17.8566 0 13.4871C0 6.93589 2 6 12 6C23 6 24 6.93589 24 13.4871C24 17.8566 23.5551 19.7281 19.995 20.49C19.9984 20.3311 20 20.1678 20 20C20 19.4332 19.9814 18.9174 19.9386 18.4485C20.4601 18.3123 20.8043 18.16 21.0375 18.0089C21.3525 17.8048 21.5725 17.5393 21.7378 16.9116C21.9304 16.1799 22 15.1286 22 13.4871C22 11.8457 21.9304 10.7943 21.7378 10.0626C21.5725 9.43494 21.3525 9.16945 21.0375 8.96533C20.6153 8.6918 19.8291 8.41418 18.2854 8.2353C16.7687 8.05956 14.7436 8 12 8C9.51158 8 7.61167 8.05935 6.14313 8.23452C4.65748 8.41173 3.79905 8.68894 3.28106 9.00059C2.53805 9.44762 2 10.2523 2 13.4871Z" fill="#F2F2F2"/>
+                    </svg>             
+                </button>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="md-blank" id="blank">
+                <div style="
+                padding: 22px 75px;
+                width: 799px;
+                height: 1211.85px;
+                background: #fff;" 
+                class="md-blank_wrap">
+                    <div style="
+                    display: flex;
+                    flex-wrap: wrap;                        
+                    margin-bottom: 100px;
+                    padding-top: 15px;
+                    border-top: 1px solid #3a62a8;" 
+                    class="md-b_header d-flex flex-wrap">
+                        <div style="width: 50%;" class="md-b_disclaimer">
+                            <p style="
+                            margin-bottom: 0;
+                            font-size: 10px;
+                            color: #000;
+                            line-height: 15px;"
+                            >КЛИНИКА/CLINIC«ОООЛУКМОНИХАКИМ/LTDLUKMONIHAKIM»</p>
+                            <p style="
+                            margin-bottom: 0;
+                            font-size: 10px;
+                            color: #000;
+                            line-height: 15px;"
+                            >НОМЕРФИЛИАЛА/BRANCHNUMBER:02KHJ</p>
+                            <p style="
+                            margin-bottom: 0;
+                            font-size: 10px;
+                            color: #000;
+                            line-height: 15px;"
+                            >НОМЕРТЕЛЕФОНА/PHONE:+9929250050505</p>
+                            <p style="
+                            margin-bottom: 0;
+                            font-size: 10px;
+                            color: #000;
+                            line-height: 15px;"
+                            >ВЕБСАЙТ/WEBSITE:WWW.LUKMONIHAKIM.TJ</p>
+                            <p style="
+                            margin-bottom: 0;
+                            font-size: 10px;
+                            color: #000;
+                            line-height: 15px;"
+                            >СТРАНА/COUNTRY:ТАДЖИКИСТАН/TAJIKISTAN</p>
+                        </div>
+                        <div style="width: 50%; text-align: right;" class="md-b_logo">
+                            <img style="max-width: 100%; width: 150px;" src="assets/svg/logo.png" alt="Logo">
+                        </div>
+                    </div>
+                    <h2 style="
+                    font-size: 12px;
+                    font-weight: 700;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #000;" 
+                    class="md-b_title">Транзакция №{{ transactionId === '' ? '___' : transactionId}}</h2>
+                    <div class="md-b_table">
+                        <h4 style="
+                        font-size: 11px;
+                        font-weight: 700;
+                        color: #000;
+                        line-height: 16px;"
+                        >ОКАЗАННЫЕ УСЛУГИ</h4>
+                        <div class="md-b_table-wrap">
+                            <table style="
+                            width: 50%;
+                            border: 1px solid #000;
+                            border-collapse: collapse;
+                            color: #000;
+                            font-size: 9px;
+                            font-weight: 900;" >
+                                <thead>
+                                    <th style="
+                                    padding: 7px 9px;
+                                    font-size: 10px;
+                                    font-weight: 900;
+                                    text-transform: uppercase;
+                                    border: 1px solid #000;
+                                    border-collapse: collapse;"
+                                    >ИФО:</th>
+                                    <th style="
+                                    padding: 7px 9px;
+                                    font-size: 10px;
+                                    font-weight: 900;
+                                    text-transform: uppercase;
+                                    border: 1px solid #000;
+                                    border-collapse: collapse;"
+                                    >{{ rowTR.created_by_user_fio }}</th>
+                                </thead>
+                                <tbody >
+                                    <tr>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">Услуга:</td>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">{{ rowTR.service_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">Стоимость:</td>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">{{ rowTR.price }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">ДАТА И ВРЕМЯ:</td>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">{{ rowTR.created_at | date:'short' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">ФИЛИАЛ:</td>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">{{ rowTR.filial_name ? rowTR.filial_name : '---' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">МЕТОД:</td>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">Наличными</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">ДОЛГ:</td>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">---</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">СТАТУС:</td>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">{{ rowTR.order_status_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">Кассир:</td>
+                                        <td style="
+                                        padding: 7px 9px;
+                                        text-transform: uppercase;
+                                        border: 1px solid #000;
+                                        border-collapse: collapse;">---</td>
+                                    </tr>
+                                </tbody>
+                                <!-- <tfoot>
+                                    <td style="padding: 7px 9px;
+                                    text-transform: uppercase;
+                                    border: 1px solid #000;
+                                    border-collapse: collapse;">ИТОГО:</td>
+                                    <td style="padding: 7px 9px;
+                                    text-transform: uppercase;
+                                    border: 1px solid #000;
+                                    border-collapse: collapse;"></td>
+                                    <td style="padding: 7px 9px;
+                                    text-transform: uppercase;
+                                    border: 1px solid #000;
+                                    border-collapse: collapse;"></td>
+                                    <td style="padding: 7px 9px;
+                                    text-transform: uppercase;
+                                    border: 1px solid #000;
+                                    border-collapse: collapse;"></td>
+                                </tfoot> -->
+                            </table>
+                        </div>
+                    </div>
+                    <div style="  
+                    margin-top: 100px;
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid #3a62a8;
+                    justify-content: center;
+                    display: flex;
+                    flex-wrap: wrap;" class="md-b_footer d-flex flex-wrap">
+                        <div style="width: 150px;" class="md-bf_date">
+                            <h4 style="
+                            margin-bottom: 0;
+                            line-height: 1;
+                            font-size: 9px;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            color: #000;">Дата / Date</h4>
+                        </div>
+                        <div style="width: 200px;" class="md-bf_signature">
+                            <h4 style="
+                            margin-bottom: 0;
+                            line-height: 1;
+                            font-size: 9px;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            color: #000;">Подпись / Signature</h4>
+                        </div>
+                        <div style="width: 230px;" class="md-bf_reponsible">
+                            <h4 style="
+                            margin-bottom: 0;
+                            line-height: 1;
+                            font-size: 9px;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            color: #000;">Ответственный / Responsible</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <iframe id="frame" width="0" height="0" frameborder="0" name="frame" src="about:blank"></iframe>
+
+    </div>
+</div>
